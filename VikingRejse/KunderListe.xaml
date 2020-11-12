@@ -22,9 +22,9 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button x:Name="btnInsert" Content="Insert" Click="btnInsert_Click" />
-                                <Button x:Name="btnUpdate" Content="Update" Click="btnUpdate_Click" />
-                                <Button x:Name="btnDelete" Content="Delete" Click="btnDelete_Click"  />
+                                <Button x:Name="btnInsert" Content="Tilføj" Click="btnInsert_Click" />
+                                <Button x:Name="btnUpdate" Content="Opdater" Click="btnUpdate_Click" />
+                                <Button x:Name="btnDelete" Content="Slet" Click="btnDelete_Click"  />
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
