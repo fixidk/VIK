@@ -1,0 +1,22 @@
+﻿<Window x:Class="VikingRejse.KunderUpdatePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VikingRejse"
+        mc:Ignorable="d"
+        Title="KunderUpdatePage" Height="450" Width="450">
+    <Grid>
+        <TextBox x:Name="txtBoxNavn" HorizontalAlignment="Left" Height="23" Margin="133,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtBoxAdresse" HorizontalAlignment="Left" Height="23" Margin="133,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtBoxTelefon" HorizontalAlignment="Left" Height="23" Margin="133,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="133,51,0,0" TextWrapping="Wrap" Text="Navn:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="133,131,0,0" TextWrapping="Wrap" Text="Adresse:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="133,202,0,0" TextWrapping="Wrap" Text="Telefon:" VerticalAlignment="Top"/>
+        <Button x:Name="btnUpdateKunde" Content="Opdater" HorizontalAlignment="Left" Margin="133,291,0,0" VerticalAlignment="Top" Width="120" Click="btnUpdateKunde_Click"/>
+        <Button x:Name="btnClearData" Content="Ryd felter" HorizontalAlignment="Left" Margin="264,291,0,0" VerticalAlignment="Top" Width="120" Click="btnClearData_Click"/>
+
+
+
+    </Grid>
+</Window>

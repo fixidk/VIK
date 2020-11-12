@@ -1,0 +1,14 @@
+﻿<Window x:Class="VikingRejse.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VikingRejse"
+        mc:Ignorable="d"
+        Title="Viking Rejser" Height="350" Width="700">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Background="White">
+        <TextBlock Text="Viking Rejser A/S" Margin="94,10,107,165" FontSize="36" FontWeight="Bold" FontFamily="Snap ITC"/>
+        <Button x:Name="btnNewPageKunder" VerticalAlignment="Bottom" Content="Kunder" Click="btnNewPageKunder_Click" Height="50" Width="250" Margin="122,0,122,100" FontSize="24" Background="#FF00FF17"/>
+        <Button x:Name="btnNewPageRejser" VerticalAlignment="Bottom" Content="Rejser" Click="btnNewPageRejser_Click" Height="50" Width="250" Margin="122,0,122,27" FontSize="24" Background="#FF00FF17"/>
+    </Grid>
+</Window>

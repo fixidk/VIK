@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VKDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Kunder">
+          <Key>
+            <PropertyRef Name="Kunde_ID" />
+          </Key>
+          <Property Name="Kunde_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kunde_Navn" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kunde_Adresse" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kunde_Telefon" Type="int" />
+        </EntityType>
+        <EntityType Name="Rejser">
+          <Key>
+            <PropertyRef Name="Rejse_ID" />
+          </Key>
+          <Property Name="Rejse_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Rejse_Titel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rejse_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rejse_Stardato" Type="datetime" />
+          <Property Name="Rejse_Slutdato" Type="datetime" />
+          <Property Name="Rejse_Pris" Type="int" />
+          <Property Name="Rejse_MaxAntal" Type="int" />
+          <Property Name="Rejse_Beskrivelse" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Transportor">
+          <Key>
+            <PropertyRef Name="Transportor_ID" />
+          </Key>
+          <Property Name="Transportor_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Transportor_Navn" Type="nvarchar" MaxLength="50" />
+          <Property Name="Transportor_Adresse" Type="nvarchar" MaxLength="50" />
+          <Property Name="Transportor_Telefon" Type="int" />
+          <Property Name="Transportor_Bemaerkninger" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="VKDBModelStoreContainer">
+          <EntitySet Name="Kunder" EntityType="Self.Kunder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rejser" EntityType="Self.Rejser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transportor" EntityType="Self.Transportor" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VKDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Kunder">
+          <Key>
+            <PropertyRef Name="Kunde_ID" />
+          </Key>
+          <Property Name="Kunde_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kunde_Navn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kunde_Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kunde_Telefon" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Rejser">
+          <Key>
+            <PropertyRef Name="Rejse_ID" />
+          </Key>
+          <Property Name="Rejse_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Rejse_Titel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rejse_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rejse_Stardato" Type="DateTime" Precision="3" />
+          <Property Name="Rejse_Slutdato" Type="DateTime" Precision="3" />
+          <Property Name="Rejse_Pris" Type="Int32" />
+          <Property Name="Rejse_MaxAntal" Type="Int32" />
+          <Property Name="Rejse_Beskrivelse" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Transportor">
+          <Key>
+            <PropertyRef Name="Transportor_ID" />
+          </Key>
+          <Property Name="Transportor_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Transportor_Navn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Transportor_Adresse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Transportor_Telefon" Type="Int32" />
+          <Property Name="Transportor_Bemaerkninger" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="VKDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Kunder" EntityType="Self.Kunder" />
+          <EntitySet Name="Rejser" EntityType="Self.Rejser" />
+          <EntitySet Name="Transportor" EntityType="Self.Transportor" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VKDBModelStoreContainer" CdmEntityContainer="VKDBEntities">
+          <EntitySetMapping Name="Kunder">
+            <EntityTypeMapping TypeName="VKDBModel.Kunder">
+              <MappingFragment StoreEntitySet="Kunder">
+                <ScalarProperty Name="Kunde_ID" ColumnName="Kunde_ID" />
+                <ScalarProperty Name="Kunde_Navn" ColumnName="Kunde_Navn" />
+                <ScalarProperty Name="Kunde_Adresse" ColumnName="Kunde_Adresse" />
+                <ScalarProperty Name="Kunde_Telefon" ColumnName="Kunde_Telefon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rejser">
+            <EntityTypeMapping TypeName="VKDBModel.Rejser">
+              <MappingFragment StoreEntitySet="Rejser">
+                <ScalarProperty Name="Rejse_ID" ColumnName="Rejse_ID" />
+                <ScalarProperty Name="Rejse_Titel" ColumnName="Rejse_Titel" />
+                <ScalarProperty Name="Rejse_By" ColumnName="Rejse_By" />
+                <ScalarProperty Name="Rejse_Stardato" ColumnName="Rejse_Stardato" />
+                <ScalarProperty Name="Rejse_Slutdato" ColumnName="Rejse_Slutdato" />
+                <ScalarProperty Name="Rejse_Pris" ColumnName="Rejse_Pris" />
+                <ScalarProperty Name="Rejse_MaxAntal" ColumnName="Rejse_MaxAntal" />
+                <ScalarProperty Name="Rejse_Beskrivelse" ColumnName="Rejse_Beskrivelse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transportor">
+            <EntityTypeMapping TypeName="VKDBModel.Transportor">
+              <MappingFragment StoreEntitySet="Transportor">
+                <ScalarProperty Name="Transportor_ID" ColumnName="Transportor_ID" />
+                <ScalarProperty Name="Transportor_Navn" ColumnName="Transportor_Navn" />
+                <ScalarProperty Name="Transportor_Adresse" ColumnName="Transportor_Adresse" />
+                <ScalarProperty Name="Transportor_Telefon" ColumnName="Transportor_Telefon" />
+                <ScalarProperty Name="Transportor_Bemaerkninger" ColumnName="Transportor_Bemaerkninger" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
